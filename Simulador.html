@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rutas de Autobuses en Aguascalientes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header">
+        <h1>Simulador de Rutas de Autobuses en Aguascalientes</h1>
+    </div>
+    
+    <div id="container">
+        <div id="map"></div>
+        <div id="panel">
+            <div class="control-group">
+                <label for="route-select">Seleccionar Ruta:</label>
+                <select id="route-select">
+                    <option value="ruta1">Ruta 1: Centro - Norte</option>
+                    <option value="ruta2">Ruta 2: Este - Oeste</option>
+                    <option value="ruta3">Ruta 3: Circuito Universitario</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="bus-id">ID del Autobús:</label>
+                <input type="text" id="bus-id" value="1234" maxlength="4" pattern="\d{4}">
+            </div>
+            
+            <div class="control-group">
+                <button id="start-simulation">Iniciar Simulación</button>
+                <button id="stop-simulation" disabled>Detener Simulación</button>
+            </div>
+            
+            <div class="bus-info">
+                <h3>Información del Autobús</h3>
+                <p>ID: <span id="display-bus-id">1234</span></p>
+                <p>Velocidad: 1 punto/segundo</p>
+                <p>Tiempo en paradas: 20 segundos</p>
+                <p>Estado: <span id="bus-status">Detenido</span></p>
+                <p>Coordenadas: <span id="bus-coords">-</span></p>
+            </div>
+            
+            <div class="control-group">
+                <label for="logs">Registro de Actividad:</label>
+                <div id="logs"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYQe1f3jiJ8UI4ZPnrl4me3ephtm9HRkU&callback=initMap" async defer></script>
+    <script src="script.js"></script>
+</body>
+</html>
